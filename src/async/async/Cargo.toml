@@ -1,0 +1,12 @@
+[package]
+name = "async-async"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+tokio = { version = "1.28.1", features = ["full"] }
+
+[[bin]]
+name = "dining-philosophers-async"
+path = "exercise.rs"

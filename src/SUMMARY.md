@@ -368,6 +368,8 @@
     - [Tokio](async/async/runtimes/tokio.md)
   - [Tasks](async/async/tasks.md)
   - [Async Channels](async/async/channels.md)
+  - [Exercise](async/async/exercise.md)
+    - [Solution](async/async/solution.md)
 - [Control Flow](async/control-flow.md)
   - [Join](async/control-flow/join.md)
   - [Select](async/control-flow/select.md)
@@ -376,11 +378,8 @@
   - [`Pin`](async/pitfalls/pin.md)
   - [Async Traits](async/pitfalls/async-traits.md)
   - [Cancellation](async/pitfalls/cancellation.md)
-- [Exercises](exercises/concurrency/afternoon.md)
-  - [Dining Philosophers](exercises/concurrency/dining-philosophers-async.md)
-  - [Broadcast Chat Application](exercises/concurrency/chat-app.md)
-  - [Solutions](exercises/concurrency/solutions-afternoon.md)
-
+  - [Exercise](async/pitfalls/exercise.md)
+    - [Solution](async/pitfalls/solution.md)
 
 # Final Words
 

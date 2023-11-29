@@ -73,8 +73,8 @@ async fn main() {
         let mut philosophers = vec![];
         let (tx, rx) = mpsc::channel(10);
         for (i, name) in PHILOSOPHERS.iter().enumerate() {
-            let left_fork = Arc::clone(&forks[i]);
-            let right_fork = Arc::clone(&forks[(i + 1) % PHILOSOPHERS.len()]);
+            let mut left_fork = Arc::clone(&forks[i]);
+            let mut right_fork = Arc::clone(&forks[(i + 1) % PHILOSOPHERS.len()]);
             // To avoid a deadlock, we have to break the symmetry
             // somewhere. This will swap the forks without deinitializing
             // either of them.

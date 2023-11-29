@@ -14,17 +14,17 @@ that `cargo run` does not deadlock:
 <!-- File src/main.rs -->
 
 ```rust,compile_fail
-{{#include dining-philosophers-async.rs:Philosopher}}
+{{#include exercise.rs:Philosopher}}
     // left_fork: ...
     // right_fork: ...
     // thoughts: ...
 }
 
-{{#include dining-philosophers-async.rs:Philosopher-think}}
+{{#include exercise.rs:Philosopher-think}}
 
-{{#include dining-philosophers-async.rs:Philosopher-eat}}
-{{#include dining-philosophers-async.rs:Philosopher-eat-body}}
-{{#include dining-philosophers-async.rs:Philosopher-eat-end}}
+{{#include exercise.rs:Philosopher-eat}}
+{{#include exercise.rs:Philosopher-eat-body}}
+{{#include exercise.rs:Philosopher-eat-end}}
     // Create forks
 
     // Create philosophers
@@ -42,7 +42,7 @@ You can use the following `Cargo.toml`:
 
 ```toml
 [package]
-name = "dining-philosophers-async-dine"
+name = "dining-philosophers"
 version = "0.1.0"
 edition = "2021"
 

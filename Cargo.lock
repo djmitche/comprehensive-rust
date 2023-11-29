@@ -129,6 +129,23 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a4668cab20f66d8d020e1fbc0ebe47217433c1b6c8f2040faf858554e394ace6"
 
 [[package]]
+name = "async-async"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
+name = "async-pitfalls"
+version = "0.1.0"
+dependencies = [
+ "futures-util",
+ "http",
+ "tokio",
+ "tokio-websockets",
+]
+
+[[package]]
 name = "autocfg"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -232,16 +249,6 @@ name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
-
-[[package]]
-name = "chat-async"
-version = "0.1.0"
-dependencies = [
- "futures-util",
- "http",
- "tokio",
- "tokio-websockets",
-]
 
 [[package]]
 name = "chrono"

@@ -17,10 +17,8 @@ Create a new Cargo project and add the following dependencies:
 
 _Cargo.toml_:
 
-<!-- File Cargo.toml -->
-
 ```toml
-{{#include chat-async/Cargo.toml}}
+{{#include Cargo.toml}}
 ```
 
 ## The required APIs
@@ -28,48 +26,40 @@ You are going to need the following functions from `tokio` and
 [`tokio_websockets`][2]. Spend a few minutes to familiarize yourself with the
 API. 
 
-- [StreamExt::next()][3] implemented by `WebsocketStream`: for asynchronously
+- [`StreamExt::next()`][3] implemented by `WebsocketStream`: for asynchronously
   reading messages from a Websocket Stream.
-- [SinkExt::send()][4] implemented by `WebsocketStream`: for asynchronously
+- [`SinkExt::send()`][4] implemented by `WebsocketStream`: for asynchronously
   sending messages on a Websocket Stream.
-- [Lines::next_line()][5]: for asynchronously reading user messages
+- [`Lines::next_line()`][5]: for asynchronously reading user messages
   from the standard input.
-- [Sender::subscribe()][6]: for subscribing to a broadcast channel.
+- [`Sender::subscribe()`][6]: for subscribing to a broadcast channel.
 
 
-## Two binaries
+## Client and Server
 
-Normally in a Cargo project, you can have only one binary, and one
-`src/main.rs` file. In this project, we need two binaries. One for the client,
-and one for the server. You could potentially make them two separate Cargo
-projects, but we are going to put them in a single Cargo project with two
-binaries. For this to work, the client and the server code should go under
-`src/bin` (see the [documentation][7]). 
+The client and server are two different programs, built from different source
+files, as defined in the `Cargo.toml` above.
 
-Copy the following server and client code into `src/bin/server.rs` and
-`src/bin/client.rs`, respectively. Your task is to complete these files as
+Copy the following server and client code into `exercise-server.rs` and
+`exercise-client.rs`, respectively. Your task is to complete these files as
 described below. 
 
-_src/bin/server.rs_:
-
-<!-- File src/bin/server.rs -->
+_exercise-server.rs_:
 
 ```rust,compile_fail
-{{#include chat-async/src/bin/server.rs:setup}}
+{{#include exercise-server.rs:setup}}
 
-{{#include chat-async/src/bin/server.rs:handle_connection}}
+{{#include exercise-server.rs:handle_connection}}
 
     // TODO: For a hint, see the description of the task below.
 
-{{#include chat-async/src/bin/server.rs:main}}
+{{#include exercise-server.rs:main}}
 ```
 
-_src/bin/client.rs_:
-
-<!-- File src/bin/client.rs -->
+_exercise-client.rs_:
 
 ```rust,compile_fail
-{{#include chat-async/src/bin/client.rs:setup}}
+{{#include exercise-client.rs:setup}}
 
     // TODO: For a hint, see the description of the task below.
 
@@ -80,13 +70,13 @@ _src/bin/client.rs_:
 Run the server with:
 
 ```shell
-cargo run --bin server
+cargo run --bin chat-server
 ```
 
 and the client with:
 
 ```shell
-cargo run --bin client
+cargo run --bin chat-client
 ```
 
 ## Tasks
@@ -95,7 +85,7 @@ cargo run --bin client
   * Hint: Use `tokio::select!` for concurrently performing two tasks in a
     continuous loop. One task receives messages from the client and broadcasts
     them. The other sends messages received by the server to the client.
-* Complete the main function in `src/bin/client.rs`.
+* Complete the main function in `exercise-client.rs`.
   * Hint: As before, use `tokio::select!` in a continuous loop for concurrently
     performing two tasks: (1) reading user messages from standard input and
     sending them to the server, and (2) receiving messages from the server, and

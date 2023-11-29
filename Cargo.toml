@@ -20,10 +20,11 @@ members = [
   "src/slices-and-lifetimes",
   "src/error-handling",
   "src/unsafe-rust",
+  'src/async/async',
+  'src/async/pitfalls',
   "src/exercises",
   "src/bare-metal/useful-crates/allocator-example",
   "src/bare-metal/useful-crates/zerocopy-example",
-  "src/exercises/concurrency/chat-async",
   "third_party/cxx/blobstore",
 ]
 resolver = "2"

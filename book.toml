@@ -239,6 +239,10 @@ use-boolean-and = true
 'async/runtimes/tokio.html' = 'async/runtimes/tokio.html'
 'async/tasks.html' = 'async/tasks.html'
 'async/channels.html' = 'async/channels.html'
+'exercises/concurrency/dining-philosophers-async.html' = '../../async/async/exercise.html'
+'exercises/concurrency/chat-app.html' = '../../async/pitfalls/exercise.html'
+'exercises/concurrency/afternoon.html' = '../../async/pitfalls/exercise.html'
+'exercises/concurrency/solutions.html' = '../../async/pitfalls/solution.html'
 
 [output.exerciser]
 output-directory = "comprehensive-rust-exercises"
