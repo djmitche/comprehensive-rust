@@ -1,3 +1,6 @@
+---
+minutes: 10
+---
 # `Mutex`
 
 [`Mutex<T>`][1] ensures mutual exclusion _and_ allows mutable access to `T`

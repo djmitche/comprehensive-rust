@@ -1,3 +1,6 @@
+---
+minutes: 15
+---
 # Futures
 
 [`Future`](https://doc.rust-lang.org/std/future/trait.Future.html)

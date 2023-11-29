@@ -1,3 +1,6 @@
+---
+minutes: 10
+---
 # `Arc`
 
 [`Arc<T>`][1] allows shared read-only access via `Arc::clone`:

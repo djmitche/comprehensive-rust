@@ -1,3 +1,6 @@
+---
+minutes: 5
+---
 # `Send`
 
 > A type `T` is [`Send`][1] if it is safe to move a `T` value to another thread.

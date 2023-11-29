@@ -1,3 +1,6 @@
+---
+minutes: 10
+---
 # Scoped Threads
 
 Normal threads cannot borrow from their environment:

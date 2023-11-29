@@ -1,3 +1,6 @@
+---
+minutes: 10
+---
 # Async Traits
 
 Async methods in traits are not yet supported in the stable channel ([An experimental feature exists in nightly and should be stabilized in the mid term.](https://blog.rust-lang.org/inside-rust/2022/11/17/async-fn-in-trait-nightly.html))

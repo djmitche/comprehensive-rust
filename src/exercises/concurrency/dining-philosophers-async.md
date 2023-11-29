@@ -1,3 +1,6 @@
+---
+minutes: 30
+---
 # Dining Philosophers --- Async
 
 See [dining philosophers](dining-philosophers.md) for a description of the

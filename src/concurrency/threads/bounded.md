@@ -1,3 +1,6 @@
+---
+minutes: 5
+---
 # Bounded Channels
 
 With bounded (synchronous) channels, `send` can block the current thread:

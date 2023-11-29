@@ -1,3 +1,6 @@
+---
+minutes: 40
+---
 # Broadcast Chat Application
 
 In this exercise, we want to use our new knowledge to implement a broadcast

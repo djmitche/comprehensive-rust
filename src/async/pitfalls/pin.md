@@ -1,3 +1,6 @@
+---
+minutes: 20
+---
 # `Pin`
 
 When you await a future, all local variables (that would ordinarily be stored on

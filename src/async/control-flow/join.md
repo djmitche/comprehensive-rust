@@ -1,3 +1,6 @@
+---
+minutes: 10
+---
 # Join
 
 A join operation waits until all of a set of futures are ready, and

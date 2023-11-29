@@ -1,3 +1,6 @@
+---
+minutes: 15
+---
 # Cancellation
 
 Dropping a future implies it can never be polled again. This is called *cancellation*

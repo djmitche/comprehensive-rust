@@ -1,3 +1,6 @@
+---
+minutes: 5
+---
 # Runtimes
 
 A *runtime* provides support for performing operations asynchronously (a

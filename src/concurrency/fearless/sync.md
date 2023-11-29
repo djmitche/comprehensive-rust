@@ -1,3 +1,6 @@
+---
+minutes: 10
+---
 # `Sync`
 
 > A type `T` is [`Sync`][1] if it is safe to access a `T` value from multiple

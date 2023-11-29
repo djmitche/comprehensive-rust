@@ -1,3 +1,6 @@
+---
+minutes: 10
+---
 # Examples
 
 ## `Send + Sync`

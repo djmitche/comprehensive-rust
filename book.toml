@@ -53,7 +53,7 @@ line-numbers = true
 [output.html.redirect]
 # Redirects in the form of "old-path" = "new-path", where the new path
 # is relative to the old path.
-"async/concurrency/channels.html" = "../channels.html"
+"async/concurrency/channels.html" = "../async/channels.html"
 "async/pitfall/async-traits.html" = "../pitfalls/async-traits.html"
 "control-flow/while-let-expression.html" = "while-let-expressions.html"
 "exercises/day-1/soluções-tarde.html" = "solutions-afternoon.html"
@@ -225,6 +225,20 @@ use-boolean-and = true
 'unsafe/extern-functions.html' = '../unsafe-rust/unsafe-functions.html'
 'unsafe/unsafe-traits.html' = '../unsafe-rust/unsafe-traits.html'
 'exercises/day-3/safe-ffi-wrapper.html' = '../../unsafe-rust/exercise.html'
+'concurrency/scoped-threads.html' = 'threads/scoped.html'
+'concurrency/channels.html' = 'threads/channels.html'
+'concurrency/channels/unbounded.html' = '../threads/unbounded.html'
+'concurrency/channels/bounded.html' = '../threads/bounded.html'
+'concurrency/send-and-sync.html' = 'fearless.html'
+'concurrency/send-and-sync/send.html' = '../fearless/send.html'
+'concurrency/send-and-sync/sync.html' = '../fearless/sync.html'
+'concurrency/send-and-sync/examples.html' = '../fearless/examples.html'
+'async/async-await.html' = 'async/async-await.html'
+'async/futures.html' = 'async/futures.html'
+'async/runtimes.html' = 'async/runtimes.html'
+'async/runtimes/tokio.html' = 'async/runtimes/tokio.html'
+'async/tasks.html' = 'async/tasks.html'
+'async/channels.html' = 'async/channels.html'
 
 [output.exerciser]
 output-directory = "comprehensive-rust-exercises"

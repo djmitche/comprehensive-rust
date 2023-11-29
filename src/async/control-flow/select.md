@@ -1,3 +1,6 @@
+---
+minutes: 15
+---
 # Select
 
 A select operation waits until any of a set of futures is ready, and responds to

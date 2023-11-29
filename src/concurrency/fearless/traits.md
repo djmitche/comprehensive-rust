@@ -1,3 +1,6 @@
+---
+minutes: 5
+---
 # `Send` and `Sync`
 
 How does Rust know to forbid shared access across threads? The answer is in two traits:

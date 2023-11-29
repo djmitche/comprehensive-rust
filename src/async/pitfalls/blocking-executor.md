@@ -1,3 +1,6 @@
+---
+minutes: 5
+---
 # Blocking the executor
 
 Most async runtimes only allow IO tasks to run concurrently.
