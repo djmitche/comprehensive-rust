@@ -32,6 +32,9 @@ async fn main() {
 
 <details>
 
+* This is the first time we've seen a runtime, which is required for "sleep" -
+  the runtime keeps track of when to poll that future again.
+
 * With the `tokio::main` macro we can now make `main` async.
 
 * The `spawn` function creates a new, concurrent "task".

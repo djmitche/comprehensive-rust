@@ -24,9 +24,4 @@ already has one.
   playground. The playground also does not permit any I/O, so most interesting
   async things can't run in the playground.
 
-* Futures are "inert" in that they do not do anything (not even start an I/O
-  operation) unless there is an executor polling them. This differs from JS
-  Promises, for example, which will run to completion even if they are never
-  used.
-
 </details>

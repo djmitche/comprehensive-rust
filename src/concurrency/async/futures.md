@@ -1,48 +1,53 @@
 ---
-minutes: 15
+minutes: 5
 ---
 # Futures
 
-[`Future`](https://doc.rust-lang.org/std/future/trait.Future.html)
-is a trait, implemented by objects that represent an operation that may not be
-complete yet. A future can be polled, and `poll` returns a
-[`Poll`](https://doc.rust-lang.org/std/task/enum.Poll.html).
+A future represents an operation that may not be complete yet. An executor polls
+a future until it is finished. We can implement a simple executor ourselves:
 
-```rust
-use std::pin::Pin;
-use std::task::Context;
+```rust,editable,compile_fail
+#![feature(noop_waker)]
+use std::{future::Future, pin::pin, task};
 
-pub trait Future {
-    type Output;
-    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output>;
+async fn count_to(count: i32) {
+    for i in 1..=count {
+        println!("Count is: {i}!");
+    }
 }
 
-pub enum Poll<T> {
-    Ready(T),
-    Pending,
+fn main() {
+    let mut fut = pin!(std::future::pending::<i32>());
+    let waker = task::Waker::noop();
+    let mut cx = task::Context::from_waker(&waker);
+    while let task::Poll::Pending = fut.as_mut().poll(&mut cx) {
+        println!("future is still pending");
+    }
 }
 ```
 
-An async function returns an `impl Future`. It's also possible (but uncommon) to
-implement `Future` for your own types. For example, the `JoinHandle` returned
-from `tokio::spawn` implements `Future` to allow joining to it.
-
-The `.await` keyword, applied to a Future, causes the current async function to
-pause until that Future is ready, and then evaluates to its output.
-
 <details>
 
-* The `Future` and `Poll` types are implemented exactly as shown; click the
-  links to show the implementations in the docs.
+Don't dwell on the `pin!`, `Context`, or `Waker`. We will return to these, and
+to the implementation details of Future, in the "Implementation" segment.
+Students should observe that `main` is calling the `poll` method repeatedly
+until it returns `Poll::Ready`. When run, this example shows that a `poll()`
+typically makes as much progress as possible before returning. In this case, it
+prints all of the counts.
 
-* We will not get to `Pin` and `Context`, as we will focus on writing async
-  code, rather than building new async primitives. Briefly:
+Comparing `Future` to other async languages:
 
-  * `Context` allows a Future to schedule itself to be polled again when an
-    event occurs.
+ * Python has a similar model in its `asyncio`. However, its `Future` type is
+   callback-based, and not polled. Async Python programs require a "loop",
+   similar to a runtime in Rust.
 
-  * `Pin` ensures that the Future isn't moved in memory, so that pointers into
-    that future remain valid. This is required to allow references to remain
-    valid after an `.await`.
+ * JavaScript's `Promise` is similar, but again callback-based. The language
+   runtime implements the event loop, so many of the details of Promise
+   resolution are hidden.
+
+ * Rust Futures are "lazy" in that they do not do anything (not even start an
+   I/O operation) unless there is an executor polling them. This differs from JS
+   Promises, for example, which will run to completion even if they are never
+   used.
 
 </details>

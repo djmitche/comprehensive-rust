@@ -1,5 +1,5 @@
 ---
-minutes: 10
+minutes: 5
 ---
 # `async`/`await`
 
@@ -31,10 +31,11 @@ Key points:
   running operation or any real concurrency in it!
 
 * What is the return type of an async call?
-  * Use `let future: () = async_main(10);` in `main` to see the type.
+  * Use `let future: () = async_main(10);` in `main` to see the type. The next
+    slide describes futures.
 
-* The "async" keyword is syntactic sugar. The compiler replaces the return type
-  with a future. 
+* The "async" keyword rewrites the function so that it can be executed in parts,
+  and changes the return value to `impl Future<RETURN_TYPE>`.
 
 * You cannot make `main` async, without additional instructions to the compiler
   on how to use the returned future.

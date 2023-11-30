@@ -3,12 +3,14 @@ minutes: 10
 ---
 # Tasks
 
-Rust has a task system, which is a form of lightweight threading.
+A task is similar to a thread, but lighter-weight. A task has a single top-level
+future which the executor polls to make progress. That future may have one or
+more nested futures that its `poll` method polls, corresponding loosely to a
+call stack.
 
-A task has a single top-level future which the executor polls to make progress.
-That future may have one or more nested futures that its `poll` method polls,
-corresponding loosely to a call stack. Concurrency within a task is possible by
-polling multiple child futures, such as racing a timer and an I/O operation.
+Concurrency of multiple tasks is supported by an executor. Concurrency within a
+task is possible by polling multiple child futures, such as racing a timer and
+an I/O operation.
 
 ```rust,compile_fail
 use tokio::io::{self, AsyncReadExt, AsyncWriteExt};
