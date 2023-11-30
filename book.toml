@@ -53,8 +53,8 @@ line-numbers = true
 [output.html.redirect]
 # Redirects in the form of "old-path" = "new-path", where the new path
 # is relative to the old path.
-"async/concurrency/channels.html" = "../async/channels.html"
-"async/pitfall/async-traits.html" = "../pitfalls/async-traits.html"
+"async/concurrency/channels.html" = "../../concurrency/async/channels.html"
+"async/pitfall/async-traits.html" = "../../concurrency/pitfalls/async-traits.html"
 "control-flow/while-let-expression.html" = "while-let-expressions.html"
 "exercises/day-1/soluções-tarde.html" = "solutions-afternoon.html"
 "exercises/day-2/soluções-tarde.html" = "solutions-afternoon.html"
@@ -233,16 +233,25 @@ use-boolean-and = true
 'concurrency/send-and-sync/send.html' = '../fearless/send.html'
 'concurrency/send-and-sync/sync.html' = '../fearless/sync.html'
 'concurrency/send-and-sync/examples.html' = '../fearless/examples.html'
-'async/async-await.html' = 'async/async-await.html'
-'async/futures.html' = 'async/futures.html'
-'async/runtimes.html' = 'async/runtimes.html'
-'async/runtimes/tokio.html' = 'async/runtimes/tokio.html'
-'async/tasks.html' = 'async/tasks.html'
-'async/channels.html' = 'async/channels.html'
-'exercises/concurrency/dining-philosophers-async.html' = '../../async/async/exercise.html'
-'exercises/concurrency/chat-app.html' = '../../async/pitfalls/exercise.html'
-'exercises/concurrency/afternoon.html' = '../../async/pitfalls/exercise.html'
-'exercises/concurrency/solutions.html' = '../../async/pitfalls/solution.html'
+'async.html' = 'concurrency/afternoon.md'
+'async/async-await.html' = '../concurrency/async/async-await.html'
+'async/futures.html' = '../concurrency/async/futures.html'
+'async/runtimes.html' = '../concurrency/async/runtimes.html'
+'async/runtimes/tokio.html' = '../concurrency/async/runtimes/tokio.html'
+'async/tasks.html' = '../concurrency/async/tasks.html'
+'async/channels.html' = '../concurrency/async/channels.html'
+'async/control-flow.html' = '../concurrency/control-flow.html'
+'async/control-flow/join.html' = '../concurrency/control-flow/join.html'
+'async/control-flow/select.html' = '../concurrency/control-flow/select.html'
+'async/pitfalls.html' = '../concurrency/pitfalls.html'
+'async/pitfalls/blocking-executor.html' = '../concurrency/pitfalls/blocking-executor.html'
+'async/pitfalls/pin.html' = '../concurrency/pitfalls/pin.html'
+'async/pitfalls/async-traits.html' = '../concurrency/pitfalls/async-traits.html'
+'async/pitfalls/cancellation.html' = '../concurrency/pitfalls/cancellation.html'
+'exercises/concurrency/dining-philosophers-async.html' = '../../concurrency/async/exercise.html'
+'exercises/concurrency/chat-app.html' = '../../concurrency/pitfalls/exercise.html'
+'exercises/concurrency/afternoon.html' = '../../concurrency/pitfalls/exercise.html'
+'exercises/concurrency/solutions.html' = '../../concurrency/pitfalls/solution.html'
 
 [output.exerciser]
 output-directory = "comprehensive-rust-exercises"
