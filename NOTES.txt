@@ -1,0 +1,17 @@
+TODO:
+- Maybe four segments, or remove the pin bit, or ..
+- balance the segments
+- async-basics exercise
+- read over the whole thing to figure out if it makes sense
+
+Maybe move basics into morning?
+
+So
+ - Async Basics - just how to use
+   - exercise: just rewrite a simple thread-spawning loop with async
+ - Communication - channels, etc.
+   - dinphil
+ - Control Flow
+   - interleave channels
+ - Implementation
+   - some combinator, maybe one to time promise execution?
